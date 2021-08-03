@@ -102,7 +102,7 @@ for (item of btn) {
             btnValue = "^2";
         }
         if (btnValue === "√x") {
-            fieldMain.value = Math.sqrt(fieldMain.value);
+            btnValue = "√";
         }
         if (btnValue == "log") {
             btnValue = "log(";
@@ -164,6 +164,10 @@ for (item of btn) {
                 if (fieldMain.value.includes("ln(")) {
                     logln(fieldMain, "ln");
                 }
+                if (fieldMain.value.includes("√")) {
+                    fieldMain.value = Math.sqrt(fieldMain.value.slice(1));
+                }
+                
                 if (fieldMain.value.includes("^")) {
                     fieldMain.value = sqrt(fieldMain);
                 }
@@ -179,7 +183,7 @@ for (item of btn) {
         }
         
         
-        // (find out the pronounciation  of the following words) plumber prnounciatiopn cemmunication are duogh plough lead ought
+        // (find out the pronounciation  of the following words) plumber prnounciatiopn cemmunication are duogh plough lead ought https://type.method.ac/#
 
         if (fieldMain.value == "result field") {
             fieldMain.value = btnValue;
