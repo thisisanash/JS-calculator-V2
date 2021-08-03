@@ -165,7 +165,7 @@ for (item of btn) {
                     logln(fieldMain, "ln");
                 }
                 if (fieldMain.value.includes("√")) {
-                    fieldMain.value = Math.sqrt(fieldMain.value.slice(1));
+                    fieldMain.value = Math.sqrt(parseInt(fieldMain.value.slice(1)));
                 }
                 
                 if (fieldMain.value.includes("^")) {
