@@ -32,6 +32,41 @@ let trigno = (str, tri) => {
     str.value = str.value.replace(trig, trigvalue);
 }
 
+let logln = (str, ex) => {
+    let where, value;
+    
+    if((str.value).includes(")")){
+        where = str.value.slice(str.value.indexOf(ex), str.value.indexOf(")") + 1);
+        
+        for (let i = 0; i < fieldMain.value.length; i++) {
+            if (where.includes("log")) {
+                value = Math.log10(where.slice(4, -1));
+            }
+            if (where.includes("ln")) {
+                value = Math.log(where.slice(3));
+            }
+        }
+
+    }
+    else{
+        where = str.value.slice(str.value.indexOf(ex));
+        
+        for (let i = 0; i < fieldMain.value.length; i++) {
+            if (where.includes("log")) {
+                value = Math.log10(where.slice(4));
+            }
+            if (where.includes("ln")) {
+                value = Math.log(where.slice(3));
+            }
+        }
+        
+    }
+    
+
+    str.value = str.value.replace(where, value);
+}
+
+
 let sqrt = (str) => {
     let base, exponent, result;
     base = (str.value).slice(0, (str.value).indexOf("^"));
@@ -70,10 +105,10 @@ for (item of btn) {
             fieldMain.value = Math.sqrt(fieldMain.value);
         }
         if (btnValue == "log") {
-            fieldMain.value = Math.log10(fieldMain.value);
+            btnValue = "log(";
         }
         if (btnValue == "ln") {
-            fieldMain.value = Math.log(fieldMain.value);
+            btnValue = "ln(";
         }
 
 
@@ -123,6 +158,12 @@ for (item of btn) {
                 if (fieldMain.value.includes("tan(")) {
                     trigno(fieldMain, "tan(");
                 }
+                if (fieldMain.value.includes("log(")) {
+                    logln(fieldMain, "log");
+                }
+                if (fieldMain.value.includes("ln(")) {
+                    logln(fieldMain, "ln");
+                }
                 if (fieldMain.value.includes("^")) {
                     fieldMain.value = sqrt(fieldMain);
                 }
@@ -131,11 +172,14 @@ for (item of btn) {
                 fieldMain.value = eval(fieldMain.value);
             }
             else {
-                if (btnValue != "%" && btnValue != "log" && btnValue != "ln" && btnValue != "√x" ){
+                if (btnValue != "%"){
                     fieldMain.value += btnValue;
                 }
             }
         }
+        
+        
+        // (find out the pronounciation  of the following words) plumber prnounciatiopn cemmunication are duogh plough lead ought
 
         if (fieldMain.value == "result field") {
             fieldMain.value = btnValue;
