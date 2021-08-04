@@ -67,11 +67,6 @@ grid-row-gap: 0px;
 .grid-31 { grid-area: 7 / 4 / 8 / 5; }
 .grid-32 { grid-area: 7 / 5 / 8 / 6; }
 
-.field, .btn {
-    border: 1px solid #49cae44d;
-    background: #ade8f4;
-}
-
 .field {
     text-align: right;
     padding: 1rem;
@@ -85,6 +80,19 @@ grid-row-gap: 0px;
     font-size: 18px;
 }
 
+.field, .btn {
+    border: 0px solid #49cae44d;
+    background: #ade8f4;
+}
+
+.grid-3, .grid-4, .grid-5, .grid-6, .grid-8, .grid-13, .grid-18, .grid-23, .grid-28{
+    color: #00000080;
+}
+
+.grid-7, .grid-9, .grid-10, .grid-11, .btn.brc button, .grid-12, .grid-17, .grid-22, .grid-27, .grid-29, .grid-31, .grid-32{
+    color: #023a54;
+}
+
 .btn.brc {
     display: flex;
     justify-content: space-between;
@@ -96,7 +104,6 @@ grid-row-gap: 0px;
 .btn.brc button {
     width: 50%;
     height: 100%;
-    background: #90e0ef;
 }
 
 .material-icons {
