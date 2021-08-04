@@ -92,7 +92,10 @@ grid-row-gap: 0px;
 .grid-2, .grid-7, .grid-9, .grid-10, .grid-11, .btn.brc button, .grid-12, .grid-17, .grid-22, .grid-27, .grid-29, .grid-31, .grid-32{
     color: #002270;
 }
-
+.grid-32{
+    background: #5C97DD;
+    color: hsl(0deg 0% 100% / 70%);
+}
 .btn.brc {
     display: flex;
     justify-content: space-between;
