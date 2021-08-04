@@ -68,11 +68,21 @@ let logln = (str, ex) => {
 
 
 let sqrt = (str) => {
-    let base, exponent, result;
-    base = (str.value).slice(0, (str.value).indexOf("^"));
-    exponent = (str.value).slice((str.value).indexOf("^") + 1);
-    result = eval("Math.pow(" + base + "," + exponent + ")");
-    return result;
+    let base, exponent, where, result ;
+    if((str.value).includes(")")){
+        base = (str.value).slice((str.value).indexOf("(")+1, (str.value).indexOf("^"));
+        exponent = (str.value).slice((str.value).indexOf("^") + 1 ,(str.value).indexOf(")"));
+        result = eval("Math.pow(" + base + "," + exponent + ")");
+        where = "(" + base + "^" + exponent + ")";
+    }
+    else{
+        base = (str.value).slice(0, (str.value).indexOf("^"));
+        exponent = (str.value).slice((str.value).indexOf("^") + 1);
+        result = eval("Math.pow(" + base + "," + exponent + ")");
+        where = base +"^"+  exponent;
+    }
+    
+    str.value = str.value.replace(where, result);
 }
 
 
@@ -169,6 +179,7 @@ for (item of btn) {
                 }
                 
                 if (fieldMain.value.includes("^")) {
+                    let 
                     fieldMain.value = sqrt(fieldMain);
                 }
 
