@@ -9,7 +9,7 @@
 }
 
 body {
-    background: #caf0f8;
+    background: #bcd6f8;
     height: 100vh;
     width: 100vw;
 }
@@ -25,7 +25,7 @@ body {
     border-radius: 10px;
     overflow: hidden;
     font-size: 18px;
-    box-shadow: 0px 10px 40px -20px #31899bc9;
+    box-shadow: 0px 10px 40px -20px #002270c9;
     /* grid */
     display: grid;
 grid-template-columns: repeat(5, 1fr);
@@ -81,16 +81,16 @@ grid-row-gap: 0px;
 }
 
 .field, .btn {
-    border: 0px solid #49cae44d;
-    background: #ade8f4;
+    border: 0px solid rgba(188, 214, 248, 0.302);
+    background: #9cc6f8;
 }
 
 .grid-3, .grid-4, .grid-5, .grid-6, .grid-8, .grid-13, .grid-18, .grid-23, .grid-28{
     color: #00000080;
 }
 
-.grid-7, .grid-9, .grid-10, .grid-11, .btn.brc button, .grid-12, .grid-17, .grid-22, .grid-27, .grid-29, .grid-31, .grid-32{
-    color: #023a54;
+.grid-2, .grid-7, .grid-9, .grid-10, .grid-11, .btn.brc button, .grid-12, .grid-17, .grid-22, .grid-27, .grid-29, .grid-31, .grid-32{
+    color: #002270;
 }
 
 .btn.brc {
