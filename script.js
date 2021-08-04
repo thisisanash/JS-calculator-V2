@@ -179,8 +179,7 @@ for (item of btn) {
                 }
                 
                 if (fieldMain.value.includes("^")) {
-                    let 
-                    fieldMain.value = sqrt(fieldMain);
+                    sqrt(fieldMain);
                 }
 
 
