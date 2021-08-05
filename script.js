@@ -204,4 +204,3 @@ for (item of btn) {
         } // All Clear
     })
 }
-
